@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# 🌤️ Aplicación del Clima
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación del clima que consume una [API especializada](https://openweathermap.org/) en proveer datos meteorológicos. Con ella, es posible conocer la temperatura actual de cualquier ciudad en un país específico.
 
-Currently, two official plugins are available:
+## 🌟 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Consumo de API**: La aplicación consume una API para obtener los datos meteorológicos. 📡
+- **Países y Ciudades**: La aplicación permite seleccionar un país y una ciudad para obtener los datos meteorológicos. 🌍
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [**Vite**](https://vitejs.dev/): Una herramienta de construcción que proporciona un desarrollo más rápido y un rendimiento de producción más eficiente. 🚀
+- [**React**](https://es.reactjs.org/): Una biblioteca de JavaScript para construir interfaces de usuario. ⚛️
+- [**Typescript**](https://www.typescriptlang.org/): Un superconjunto de JavaScript que añade tipado estático y objetos basados en clases. 📘
+- [**CSS Modules**](https://github.com/css-modules/css-modules): Una forma de modularizar el CSS. 🎨
+- [**React Hook Form**](https://react-hook-form.com/): Una biblioteca para manejar formularios en React. 📝
+- [**Axios**](https://axios-http.com/): Un cliente HTTP basado en promesas para el navegador y node.js. 🌐
+- [**ZOD**](https://zod.dev/): Una biblioteca de validación de esquemas TypeScript. 🛡️
+- [**Valibot**](https://valibot.dev/): Una biblioteca de validación de esquemas TypeScript. 🛡️
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Instalación y uso
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clona el repositorio: `git clone https://github.com/EFZR/Clima-React-Typescript.git` 📂
+2. Navega al directorio del proyecto: `cd Clima-React-Typescript` 📁
+3. Instala las dependencias: `npm install` 📦
+4. Ejecuta el proyecto: `npm run dev` 🏃
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Ahora, la aplicación debería estar corriendo en `http://localhost:5173`. 🌐
