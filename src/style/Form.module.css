@@ -6,7 +6,7 @@
 }
 
 .form input[type="text"],
-.form select{
+.form select {
   padding: 1rem;
   background-color: transparent;
   border: 0.3rem solid var(--white);
@@ -31,6 +31,10 @@
   padding: 1rem;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: var(--primary-dark);
-} 
+}
+
+.form option {
+  color: black;
+}

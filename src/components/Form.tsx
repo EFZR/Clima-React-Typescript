@@ -1,48 +1,52 @@
-import { ChangeEvent, useState } from 'react';
+import { useForm } from "react-hook-form";
+import type { SearchType } from "../types";
 import { countries } from "../data";
-import type { SearchType } from '../types';
-import style from '../style/Form.module.css';
+import useWeather from "../hooks/useWeather";
+import style from "../style/Form.module.css";
+import Alert from "./Alert";
 
 export default function Form() {
-  const [search, setSearch] = useState<SearchType>({
-    city: '',
-    country: ''
-  });
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<SearchType>();
+  const { fetchWeather } = useWeather();
 
-  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    setSearch({
-      ...search,
-      [e.target.name]: e.target.value
-    })
+  function onSubmit(data: SearchType) {
+    console.log("submit");
+    fetchWeather(data);
+    reset();
   }
 
   return (
-    <form className={style.form}>
+    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={style.field}>
         <label htmlFor="city">Ciudad:</label>
         <input
-          id='city'
+          id="city"
           type="text"
-          name='city'
-          placeholder='Ciudad'
-          value={search.city}
-          onChange={handleChange}
+          placeholder="Ciudad"
+          autoComplete="off"
+          {...register(
+            "city",
+            { required: "La ciudad es necesaria para completar la accion." }
+          )}
         />
+        {errors.city && <Alert>{errors.city.message}</Alert>}
       </div>
 
       <div className={style.field}>
-        <label htmlFor="pais">Pais:</label>
+        <label htmlFor="country">Pais:</label>
         <select
-          name="pais"
-          id="pais"
-          value={search.country}
-          onChange={handleChange}
+          id="country"
+          {...register(
+            "country",
+            { required: "El pais es necesario para completar la accion." }
+          )}
         >
           <option value="">-- Seleccione un País --</option>
           {countries.map((country) => (
             <option key={country.code} value={country.code}>{country.name}</option>
           ))}
         </select>
+        {errors.country && <Alert>{errors.country.message}</Alert>}
       </div>
 
       <input
