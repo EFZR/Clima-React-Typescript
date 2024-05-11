@@ -23,6 +23,8 @@ Esta es una aplicación del clima que consume una [API especializada](https://op
 1. Clona el repositorio: `git clone https://github.com/EFZR/Clima-React-Typescript.git` 📂
 2. Navega al directorio del proyecto: `cd Clima-React-Typescript` 📁
 3. Instala las dependencias: `npm install` 📦
-4. Ejecuta el proyecto: `npm run dev` 🏃
+4. Create an account in [OpenWeatherMap](https://openweathermap.org/) and get an API key 🗝️
+5. Crea un archivo `.env.local` en la raíz del proyecto y agrega la siguiente línea: `VITE_API_KEY=tu_api_key` 🔑
+6. Ejecuta el proyecto: `npm run dev` 🏃
 
 Ahora, la aplicación debería estar corriendo en `http://localhost:5173`. 🌐
