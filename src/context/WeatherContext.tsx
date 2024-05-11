@@ -89,7 +89,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
       const apiKey = import.meta.env.VITE_API_KEY;
 
       const geoUrl =
-        `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${apiKey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${apiKey}`
 
       const { data: geoData } = await axios.get(geoUrl);
 
